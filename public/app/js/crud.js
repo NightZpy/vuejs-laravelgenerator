@@ -15670,7 +15670,11 @@ var vm = new Vue({
         'vuetable:cell-dblclicked': function vuetableCellDblclicked(item, field, event) {
             this.$editable(event, function (value) {
                 item = JSON.stringify(item);
-                item = item.replace('<span class=\\"highlight\\">', "").replace('</span>', "");
+                //console.log("1.------------");
+                //console.log(item);
+                //console.log("---------------");
+                item = item.replace('<span class=\\"highlight\\">', "").replace('<\/span>', "").replace('<span class=\\"highlight\\"><\/span>', "");
+                //console.log(item);
                 item = JSON.parse(item);
                 var data = item;
                 data._token = token;
@@ -15710,7 +15714,7 @@ var vm = new Vue({
         },
         'vuetable:load-success': function vuetableLoadSuccess(response) {
             var data = response.data.data;
-            onLoadSuccess(data, this.highlight, this.searchFor);
+            //onLoadSuccess(data, this.highlight, this.searchFor);
         },
         'vuetable:load-error': function vuetableLoadError(response) {
             if (response.status == 400) {
