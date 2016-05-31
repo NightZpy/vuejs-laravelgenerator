@@ -15538,7 +15538,7 @@ var vm = new Vue({
             field: fieldInitOrder,
             direction: 'asc'
         },
-        perPage: 2,
+        perPage: 10,
         paginationComponent: 'vuetable-pagination-bootstrap',
         paginationInfoTemplate: 'แสดง {from} ถึง {to} จากทั้งหมด {total} รายการ',
         itemActions: [{ name: 'view-item', label: '', icon: 'glyphicon glyphicon-zoom-in', 'class': 'btn btn-info', extra: { 'title': 'View', 'data-toggle': "tooltip", 'data-placement': "left" } }, { name: 'edit-item', label: '', icon: 'glyphicon glyphicon-pencil', 'class': 'btn btn-warning', extra: { title: 'Edit', 'data-toggle': "tooltip", 'data-placement': "top" } }, { name: 'delete-item', label: '', icon: 'glyphicon glyphicon-remove', 'class': 'btn btn-danger', extra: { title: 'Delete', 'data-toggle': "tooltip", 'data-placement': "right" } }],
@@ -15669,13 +15669,6 @@ var vm = new Vue({
         'vuetable:row-clicked': function vuetableRowClicked(data, event) {},
         'vuetable:cell-dblclicked': function vuetableCellDblclicked(item, field, event) {
             this.$editable(event, function (value) {
-                item = JSON.stringify(item);
-                //console.log("1.------------");
-                //console.log(item);
-                //console.log("---------------");
-                item = item.replace('<span class=\\"highlight\\">', "").replace('<\/span>', "").replace('<span class=\\"highlight\\"><\/span>', "");
-                //console.log(item);
-                item = JSON.parse(item);
                 var data = item;
                 data._token = token;
                 data[field.name] = value;
@@ -15689,7 +15682,7 @@ var vm = new Vue({
                     }
                     vm.modal('INFO');
                     event.target.setAttribute("style", "background-color: red");
-                    //event.target.setAttribute("title", );
+                    //event.target.setAttribute("title", response.data.errors[field.name]);
                 });
 
                 /*Vue.http.patch(vm.url.update + item.id, updateData, function (data){
