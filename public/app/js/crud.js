@@ -15611,6 +15611,12 @@ var vm = new Vue({
             this.formModal = this.showModal = this.deleteModal = this.infoModal = false;
             this.cleanData();
         },
+        visible: function visible(field) {
+            for (var column in this.columns) {
+                if (this.columns[column].name == field) return this.columns[column].visible;
+            }
+            return false;
+        },
         modal: function modal(type) {
             this.method = type;
             if (type == 'PATCH' || type == 'POST') {

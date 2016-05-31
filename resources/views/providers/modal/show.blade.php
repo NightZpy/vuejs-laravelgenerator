@@ -1,4 +1,4 @@
-<modal title="@yield('modal-show-title')" :show.sync="showModal" effect="fade" width="800">
+<modal v-if="showModal" title="@yield('modal-show-title')" :show.sync="showModal" effect="fade" width="800">
 	<div slot="modal-header" class="modal-header">
 		<h4 class="modal-title">
 		  <b>@yield('modal-show-title')</b>
@@ -13,8 +13,8 @@
 						<div class="col-sm-offset-2 col-sm-8">
 							<table class="table-responsive">
 								<tbody>
-									<template v-for="(field, value) in row">
-										<tr>
+									<template v-for="(field, value) in row">		
+										<tr v-if="visible(field)">
 											<th style="width:50%">@{{ field | capitalize }}</th>
 											<td>@{{ value }}</td>
 										</tr>

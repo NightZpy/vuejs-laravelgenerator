@@ -1,4 +1,4 @@
-<modal title="Información" :show.sync="infoModal" effect="fade">
+<modal v-if="infoModal" title="Información" :show.sync="infoModal" effect="fade">
 	<div slot="modal-header" class="modal-header">
 		<h4 class="modal-title">
 		  <b>Información</b>

@@ -79,6 +79,9 @@ var apiUrl = {
 
 var fieldInitOrder = 'name';
 
+/*
+* Used for customize fields with highlight in searching result
+*/
 var onLoadSuccess = function(data, highlight, searchFor) {
     if (this.searchFor !== '') {
         for (n in data) {
