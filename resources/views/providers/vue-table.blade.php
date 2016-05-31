@@ -55,7 +55,7 @@
         pagination-component-class=""
         :pagination-component="paginationComponent"
         :item-actions="itemActions"
-        :per-page="perPage"
+        :per-page="10"
         :append-params="moreParams"
         wrapper-class="vuetable-wrapper "
         table-wrapper=".vuetable-wrapper"

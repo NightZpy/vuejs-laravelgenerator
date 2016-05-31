@@ -15669,11 +15669,12 @@ var vm = new Vue({
         'vuetable:row-clicked': function vuetableRowClicked(data, event) {},
         'vuetable:cell-dblclicked': function vuetableCellDblclicked(item, field, event) {
             this.$editable(event, function (value) {
-                var data = item;
+                item = JSON.stringify(item);
+                var data = JSON.parse(item);
                 data._token = token;
                 data[field.name] = value;
                 vm.sendData(vm.url.update + data.id, 'PATCH', data).then(function (response) {
-                    //event.target.setAttribute("style", "background-color: green");
+                    event.target.setAttribute("style", "background-color: white");
                 }, function (response) {
                     vm.flashMessage = vm.defaultErrorMessage;
                     vm.flashType = vm.flashTypeDanger;
@@ -15682,12 +15683,8 @@ var vm = new Vue({
                     }
                     vm.modal('INFO');
                     event.target.setAttribute("style", "background-color: red");
-                    //event.target.setAttribute("title", response.data.errors[field.name]);
+                    event.target.setAttribute("title", response.data.errors[field.name]);
                 });
-
-                /*Vue.http.patch(vm.url.update + item.id, updateData, function (data){
-                    
-                }); */
             });
         },
         'vuetable:action': function vuetableAction(action, data) {
