@@ -1,4 +1,4 @@
-@extends('providers.modal.form')
+@extends('layouts.modal.form')
 
 @section('modal-form-title')
 Formulario

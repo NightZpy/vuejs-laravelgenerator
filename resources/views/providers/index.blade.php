@@ -19,7 +19,7 @@
         @include('providers.form')
         @include('providers.delete')
         @include('providers.show')
-        @include('providers.modal.info')        
+        @include('layouts.modal.info')        
     </div>
 @endsection
 

@@ -15680,7 +15680,7 @@ var vm = new Vue({
                 data._token = token;
                 data[field.name] = value;
                 vm.sendData(vm.url.update + data.id, 'PATCH', data).then(function (response) {
-                    event.target.setAttribute("style", "background-color: white");
+                    event.target.setAttribute("style", "background-color: #f5f5f5");
                 }, function (response) {
                     vm.flashMessage = vm.defaultErrorMessage;
                     vm.flashType = vm.flashTypeDanger;

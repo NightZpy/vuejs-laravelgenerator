@@ -7,7 +7,7 @@
 	<div slot="modal-body" class="modal-body">
 		@include('layouts.flash')
 		<div class="row">
-			<div class="col-sm-offset-2 col-sm-8">¿Seguro que desea eliminar el proveedor?</div>
+			<div class="col-sm-offset-2 col-sm-8">@yield('modal-delete-message')</div>
 		</div>
 	</div>
 	<div slot="modal-footer" class="modal-footer">
