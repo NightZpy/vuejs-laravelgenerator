@@ -13,7 +13,6 @@
 
 <script>
 import PaginationMixin from './VuetablePaginationMixin.vue'
-
 export default {
     mixins: [PaginationMixin],
     methods: {
