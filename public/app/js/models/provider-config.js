@@ -16,6 +16,7 @@ var tableColumns = [
     {
         name: 'id',
         sortField: 'id',
+        visible: false
     },
     {
         name: 'code',
@@ -36,6 +37,7 @@ var tableColumns = [
     {
         name: 'address',
         sortField: 'address',
+        visible: false
     },
     {
         name: 'phone',
@@ -48,6 +50,7 @@ var tableColumns = [
     {
         name: 'movil2',
         sortField: 'movil2',
+        visible: false
     },       
     {
         name: 'contact',
