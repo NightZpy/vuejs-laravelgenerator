@@ -21,7 +21,7 @@ Vue.component('vuetable-pagination-simple', VuetablePaginationSimple)
 
 var E_SERVER_ERROR = 'Error communicating with the server';
 
-Vue.config.debug = true;        
+Vue.config.debug = true        
 
 Vue.component('custom-error', {
   props: ['field', 'validator', 'message'],

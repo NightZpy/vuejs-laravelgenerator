@@ -17128,5 +17128,3 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./VuetablePaginationMixin.vue":17,"babel-runtime/helpers/interop-require-default":1,"vue":7,"vue-hot-reload-api":4}]},{},[14]);
-
-//# sourceMappingURL=crud.js.map

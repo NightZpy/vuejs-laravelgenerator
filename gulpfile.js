@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+elixir.config.sourcemaps = false;
 
 /*
  |--------------------------------------------------------------------------
@@ -12,5 +13,10 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.browserify('crud.js', 'public/app/js/crud.js');
+    mix.styles([
+        'vue-styles.css'
+    ], 'public/app/css/vue-styles.css');
+
+	mix.scripts(['models/provider-config.js'], 'public/app/js/models/provider-config.js')
+       .browserify('crud.js', 'public/app/js/crud.js');        
 });
